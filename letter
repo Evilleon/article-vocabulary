@@ -1,0 +1,197 @@
+/*
+	 * 字母个数
+	 */
+	public static void Char(ArrayList<Integer> list,int sum) throws IOException {
+		int a=0;int b=0;int c=0;int d=0;int e=0;int f=0;int g=0;int h=0;int i=0;int j=0;int k=0;int l=0;int m=0;int n=0;int o=0;int p=0;int q=0;
+		int r=0;int s=0;int t=0;int u=0;int v=0;int w=0;int x=0;int y=0;int z=0;
+		File file = new File("E:/Gone with the Wind.txt");
+		if(!file.exists()) {
+			 System.out.println("file inexists");
+			 System.exit(0);
+		}
+		char[] data=new char[8000];
+		BufferedReader br = new BufferedReader(new FileReader(file));
+		StringBuffer sb = new StringBuffer();
+		String line=null;
+		try {
+			while ((line = br.readLine()) != null) {
+	            sb.append(line);
+	            System.out.println(line);
+	        }
+			
+		}finally {
+			br.close();
+			for (int ii = 0; ii < sb.length(); ii++) {
+		           char ch = sb.charAt(ii);
+		           for(int qq=0;qq<8000;qq++) {
+		                   data[qq]=ch;
+		           }
+		           
+		           if(ch=='a'||ch=='A') {
+		        	   a++;
+		           }
+		           if(ch=='b'||ch=='B') {
+		        	   b++;
+		           }
+		           if(ch=='c'||ch=='C') {
+		        	   c++;
+		           }
+		           if(ch=='d'||ch=='D') {
+		        	   d++;
+		           }
+		           if(ch=='e'||ch=='E') {
+		        	   e++;
+		           }
+		           if(ch=='f'||ch=='F') {
+		        	   f++;
+		           }
+		           if(ch=='g'||ch=='G') {
+		        	   g++;
+		           }
+		           if(ch=='h'||ch=='H') {
+		        	   h++;
+		           }
+		           if(ch=='i'||ch=='I') {
+		        	   i++;
+		           }
+		           if(ch=='j'||ch=='J') {
+		        	   j++;
+		           }
+		           if(ch=='k'||ch=='K') {
+		        	   k++;
+		           }
+		           if(ch=='l'||ch=='L') {
+		        	   l++;
+		           }
+		           if(ch=='m'||ch=='M') {
+		        	   m++;
+		           }
+		           if(ch=='n'||ch=='N') {
+		        	   n++;
+		           }
+		           if(ch=='o'||ch=='O') {
+		        	   o++;
+		           }
+		           if(ch=='p'||ch=='P') {
+		        	   p++;
+		           }
+		           if(ch=='q'||ch=='Q') {
+		        	   q++;
+		           }
+		           if(ch=='r'||ch=='R') {
+		        	   r++;
+		           }
+		           if(ch=='s'||ch=='S') {
+		        	   s++;
+		           }
+		           if(ch=='t'||ch=='T') {
+		        	   t++;
+		           }
+		           if(ch=='u'||ch=='U') {
+		        	   u++;
+		           }
+		           if(ch=='v'||ch=='V') {
+		        	   v++;
+		           }
+		           if(ch=='w'||ch=='W') {
+		        	   w++;
+		           }
+		           if(ch=='x'||ch=='X') {
+		        	   x++;
+		           }
+		           if(ch=='y'||ch=='Y') {
+		        	   y++;
+		           }
+		           if(ch=='z'||ch=='Z') {
+		        	   z++;
+		           }
+		           
+			 }
+			System.out.println("a出现的频率"+a);list.add(a);
+			System.out.println("b出现的频率"+b);list.add(b);
+			System.out.println("c出现的频率"+c);list.add(c);
+			System.out.println("d出现的频率"+d);list.add(d);
+			System.out.println("e出现的频率"+e);list.add(e);
+			System.out.println("f出现的频率"+f);list.add(f);
+			System.out.println("g出现的频率"+g);list.add(g);
+			System.out.println("h出现的频率"+h);list.add(h);
+			System.out.println("i出现的频率"+i);list.add(i);
+			System.out.println("g出现的频率"+g);list.add(j);
+			System.out.println("k出现的频率"+k);list.add(k);
+			System.out.println("l出现的频率"+l);list.add(l);
+			System.out.println("m出现的频率"+m);list.add(m);
+			System.out.println("n出现的频率"+n);list.add(n);
+			System.out.println("o出现的频率"+o);list.add(o);
+			System.out.println("p出现的频率"+p);list.add(p);
+			System.out.println("q出现的频率"+q);list.add(q);
+			System.out.println("r出现的频率"+r);list.add(r);
+			System.out.println("s出现的频率"+s);list.add(s);
+			System.out.println("t出现的频率"+t);list.add(t);
+			System.out.println("u出现的频率"+u);list.add(u);
+			System.out.println("v出现的频率"+v);list.add(v);
+			System.out.println("w出现的频率"+w);list.add(w);
+			System.out.println("x出现的频率"+x);list.add(x);
+			System.out.println("y出现的频率"+y);list.add(y);
+			System.out.println("z出现的频率"+z);list.add(z);
+			sum=a+b+c+d+e+f+g+h+i+j+k+l+m+n+o+p+q+r+s+t+u+v+w+x+y+z;
+			precentage(list,sum);
+			
+		}
+	}
+	/*
+	 *  字母出现频率
+	 *
+	 */
+	public static void precentage(ArrayList<Integer> list,int sum) {
+		ArrayList<Float> list1=new ArrayList<Float>();
+		DecimalFormat fmt=new DecimalFormat("0.##");
+		for(int i=0;i<list.size();i++) {
+			float x=(float)list.get(i);
+			list1.add(x);
+		}
+		float sum1=(float)sum;
+		int s=0;
+		for(char v='a';v<='z';v++) {
+			System.out.println(v+"所占的百分比是"+Float.parseFloat((fmt.format((list1.get(s)/sum1)*100)))+"%");
+			s++;
+		}
+	}
+	public static void word() throws IOException {
+		File file = new File("E:/Gone with the Wind.txt");
+		if(!file.exists()) {
+			 System.out.println("file inexists");
+			 System.exit(0);
+		}
+		BufferedReader br = new BufferedReader(new FileReader(file));
+		 StringBuffer sb = new StringBuffer();
+		String line=null;
+		try {
+			while ((line = br.readLine()) != null) {
+				sb.append(line);
+	        }
+			
+		}finally {
+			 br.close();
+			 String str = sb.toString().toLowerCase();
+		     String[] words = str.split("[^(a-zA-Z)]+");
+		     for(int i=0;i<words.length;i++) {
+		    	 System.out.println(words[i]+" ");
+		     }
+		     Map<String ,Integer> map = new HashMap<String, Integer>();
+		     for(String word :words){
+		            if(map.get(word)==null){  // 若不存在说明是第一次，则加入到map,出现次数为1
+		                map.put(word,1);
+		            }else{
+		                map.put(word,map.get(word)+1);  // 若存在，次数累加1
+		            }
+		        }
+		}
+	}
+	public static void main(String[] args) throws IOException {
+		@SuppressWarnings("unused")
+		ArrayList<Integer> list=new ArrayList<Integer>();
+		@SuppressWarnings("unused")
+		int sum=0;
+		demo08.word();
+		
+	}
